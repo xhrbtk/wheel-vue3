@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Topnav></Topnav>
         <div class="topnav">
             <div class="logo"></div>
             <div class="menu"></div>
@@ -10,3 +11,13 @@
         </div>
     </div>
 </template>
+
+<script lang="ts">
+import Topnav from '../components/Topnav.vue'
+export default {
+    components: {
+        Topnav
+    }
+}
+
+</script>
