@@ -5,3 +5,11 @@
 - 解决方法  创建xxx.d.ts 告诉ts 如何理解.vue文件
 - shims-vue.d.ts 文件
 ```
+
+## Home.vue
+- topnav: 左边是logo 右边是menu
+- banner： 文字介绍 + 开始按钮
+
+## Doc.vue
+- topnav: 同上
+- content: 左边是aside 右边是main
