@@ -5,10 +5,15 @@
 
 <script lang="ts" setup>
 import { ref, provide } from 'vue'
+import router from './router'
 const width = document.documentElement.clientWidth
 console.log('width', width)
 const menuVisible = ref(width <= 500 ? false : true)
 console.log('app 获取的menuVisible是', menuVisible.value)
 provide('menuVisible', menuVisible) // set
-
+router.afterEach(() => {
+  if(width <= 500){
+    menuVisible.value = false
+  }
+})
 </script>
