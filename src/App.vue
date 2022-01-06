@@ -5,7 +5,9 @@
 
 <script lang="ts" setup>
 import { ref, provide } from 'vue'
-const menuVisible = ref(false)
+const width = document.documentElement.clientWidth
+console.log('width', width)
+const menuVisible = ref(width <= 500 ? false : true)
 console.log('app 获取的menuVisible是', menuVisible.value)
 provide('menuVisible', menuVisible) // set
 
