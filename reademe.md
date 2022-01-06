@@ -13,3 +13,5 @@
 ## Doc.vue
 - topnav: 同上
 - content: 左边是aside 右边是main
+
+## 自动引入功能  安装auto import 插件

@@ -7,8 +7,11 @@
         </ul>
     </div>
 </template>
-<script lang="ts">
+<script lang="ts" setup>
+import { inject, Ref } from "@vue/runtime-core"
 
+const menuVisible = inject<Ref<boolean>>('menuVisible')
+console.log('menuVisible', menuVisible)
 </script>
 <style lang="scss" scoped>
 .topnav { 
