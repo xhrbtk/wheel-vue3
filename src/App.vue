@@ -2,15 +2,11 @@
   <router-view></router-view>
 </template>
 
-<script lang="ts">
-import { ref } from "@vue/reactivity"
-import { provide } from "@vue/runtime-core"
-export default{
-  name: 'App',
-  setup() {
-    const menuVisible = ref(false)
-    provide('menuVisible', menuVisible)
 
-  }
-}
+<script lang="ts" setup>
+import { ref, provide } from 'vue'
+const menuVisible = ref(false)
+console.log('app 获取的menuVisible是', menuVisible.value)
+provide('menuVisible', menuVisible) // set
+
 </script>

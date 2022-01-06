@@ -1,6 +1,6 @@
 <template>
     <div class="topnav">
-        <div class="logo">LOGO</div>
+        <div class="logo" @click="toggleMenu">LOGO</div>
         <ul class="menu">
             <li>菜单1</li>
             <li>菜单2</li>
@@ -8,10 +8,15 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { inject, Ref } from "@vue/runtime-core"
+import { inject, Ref } from 'vue'
 
-const menuVisible = inject<Ref<boolean>>('menuVisible')
-console.log('menuVisible', menuVisible)
+const menuVisible = inject<Ref<boolean>>('menuVisible') //get
+console.log('topnav 获取的menuVisible是', menuVisible.value)
+const toggleMenu = () => {
+    menuVisible.value = !menuVisible.value
+    console.log('llalal')
+}
+
 </script>
 <style lang="scss" scoped>
 .topnav { 
@@ -23,6 +28,7 @@ console.log('menuVisible', menuVisible)
     >.logo{
         max-width: 6em;
         margin-right: auto;
+        cursor: pointer;
     }
     >.menu{
         display: flex;
