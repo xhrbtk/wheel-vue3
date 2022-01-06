@@ -3,7 +3,10 @@ import { createWebHashHistory, createRouter }  from 'vue-router'
 import Home from './views/Home.vue'
 import Doc from './views/Doc.vue'
 import Switchdemo from './components/Switchdemo.vue'
-
+import Buttondemo from './components/Buttondemo.vue'
+import Dialogdemo from './components/Dialogdemo.vue'
+import Tabsdemo from './components/Tabsdemo.vue'
+import Docdemo from './components/Docdemo.vue'
 
 const history = createWebHashHistory()
 const router = createRouter({
@@ -13,7 +16,11 @@ const router = createRouter({
         { 
             path: '/doc', component: Doc,
             children: [
-                { path: 'switch', component: Switchdemo }
+                { path: '', component: Docdemo },
+                { path: 'switch', component: Switchdemo },
+                { path: 'button', component: Buttondemo },
+                { path: 'dialog', component: Dialogdemo },
+                { path: 'tabs', component: Tabsdemo },
             ]
         }
     ]
