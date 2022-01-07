@@ -3,7 +3,7 @@
         <div class="layout">
             <Topnav class="nav"></Topnav>
             <div class="content" >
-                <aside v-if="menuVisible">
+                <aside >
                     <h2>组件列表</h2>
                     <ol>
                         <li>
@@ -30,9 +30,21 @@
 
 <script lang="ts" setup>
 import Topnav from "../components/Topnav.vue";
-import { inject, Ref } from 'vue';
+import { inject, Ref, computed } from 'vue';
 const menuVisible = inject<Ref<boolean>>('menuVisible') // get
-console.log('doc---menuvisible', menuVisible.value)
+
+const leftStyle = computed(() => {
+  let width = document.documentElement.clientWidth
+  if(width <= 500){
+    if(menuVisible.value === false){
+      return '-150px'
+    }else{
+      return '0px'
+    }
+      
+  }
+  return '0px'
+})
 </script>
 
 <style lang="scss" scoped>
@@ -70,9 +82,10 @@ aside {
   padding: 16px;
   position: fixed;
   top: 0;
-  left: 0;
-  padding-top: 70px;
+  left: v-bind(leftStyle);
+  top: 60px;
   height: 100%;
+  transition: all 1s linear;
   > h2 {
     margin-bottom: 4px;
   }
