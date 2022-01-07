@@ -1,7 +1,7 @@
 <template>
     <div class="topnav">
         <div class="logo">
-            <svg class="icon icon-logo" aria-hidden="true">
+            <svg class="icon icon-logo" aria-hidden="true" @click="toHome">
                 <use xlink:href="#icon-longmao-"></use>
             </svg>
             <span>WHEEL UI</span>
@@ -17,10 +17,14 @@
 </template>
 <script lang="ts" setup>
 import { inject, Ref } from 'vue'
-
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const menuVisible = inject<Ref<boolean>>('menuVisible') //get
 const toggleMenu = () => {
     menuVisible.value = !menuVisible.value
+}
+const toHome = () => {
+    router.push({ path: '/' })
 }
 
 </script>
