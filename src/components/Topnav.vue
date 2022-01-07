@@ -1,11 +1,18 @@
 <template>
     <div class="topnav">
-        <div class="logo">WHEEL UI</div>
+        <div class="logo">
+            <svg class="icon icon-logo" aria-hidden="true">
+                <use xlink:href="#icon-longmao-"></use>
+            </svg>
+            <span>WHEEL UI</span>
+        </div>
         <ul class="menu">
             <li>菜单1</li>
             <li>菜单2</li>
         </ul>
-        <span class="toggleAside" @click="toggleMenu"></span>
+        <svg class="icon toggleAside" aria-hidden="true" @click="toggleMenu">
+            <use xlink:href="#icon-yangshi_icon_tongyong_nav_drawer"></use>
+        </svg>
     </div>
 </template>
 <script lang="ts" setup>
@@ -28,11 +35,18 @@ const toggleMenu = () => {
     align-items: center;
     box-shadow: 0 2px 8px #f0f1f2;
     .logo{
-        max-width: 6em;
+        max-width: 30em;
         margin-right: auto;
         cursor: pointer;
         color: #1890ff;
         font-weight: 500;
+        display: flex;
+        align-items: center;
+        .icon-logo{
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+        }
     }
     .menu{
         display: flex;
@@ -48,7 +62,6 @@ const toggleMenu = () => {
         display: inline-block;
         width: 24px;
         height: 24px;
-        background: red;
         position: absolute;
         left: 16px;
         top: 50%;

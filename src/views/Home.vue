@@ -7,6 +7,7 @@
             <p class="actions">
                 <a href="https://github.com/xhrbtk/wheel-vue3">GITHUB</a>
                 <router-link to="/doc" >开始</router-link>
+                
             </p>
         </div>
     </div>

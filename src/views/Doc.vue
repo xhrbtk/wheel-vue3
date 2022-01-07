@@ -91,17 +91,11 @@ const leftStyle = computed(() => {
     main {
       flex-grow: 1;
       padding: 20px 170px 32px 64px;
+      overflow: auto;
     }
     @media (max-width: 500px) {
       padding-left: 0; 
     }
   }
-}
-
-aside {
-  
-}
-main {
-  overflow: auto;
 }
 </style>
