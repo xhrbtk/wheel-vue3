@@ -2,11 +2,11 @@
     <div>
         <Topnav></Topnav>
         <div class="banner">
-            <h1>wheel-ui</h1>
-            <h2>一个厉害的ui框架</h2>
+            <h1 class="title1">WHEEL-UI</h1>
+            <h2 class="title2">一个有意思的UI框架</h2>
             <p class="actions">
-                <a href="https://github.com/xhrbtk/wheel-vue3">github</a>
-                <router-link to="/doc">开始</router-link>
+                <a href="https://github.com/xhrbtk/wheel-vue3">GITHUB</a>
+                <router-link to="/doc" >开始</router-link>
             </p>
         </div>
     </div>
@@ -24,21 +24,29 @@ export default {
 .banner {
   padding: 100px 0;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightgreen;
-  > .actions{
-    padding: 8px 0;
+  background: #fff;
+  height: 100vh;
+  .title1{
+    margin-top: 80px;
+  }
+  .title1, .title2{
+    color: #1890ff;
+  }
+  .actions{
+    padding: 10px 0;
     a {
       margin:0 8px;
       background: #fff;
       display: inline-block;
-      $h: 28px;
+      $h: 40px;
       height: $h;
       line-height: $h;
       border-radius: calc($h / 2);
-      padding: 0 8px;
+      padding: 0 40px;
+      color: rgb(17,148,246);
+      border: 1px solid rgb(17,148,246);
     }
   }
 }

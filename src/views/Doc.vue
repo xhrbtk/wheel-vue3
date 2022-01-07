@@ -4,8 +4,8 @@
             <Topnav class="nav"></Topnav>
             <div class="content" >
                 <aside >
-                    <h2>组件列表</h2>
                     <ol>
+                       <li>组件列表</li>
                         <li>
                             <router-link to="/doc/switch">Switch 组件</router-link>
                         </li>
@@ -52,48 +52,54 @@ const leftStyle = computed(() => {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  > .nav {
+  >.nav {
     flex-shrink: 0;
   }
-  > .content {
+  .content {
+    display: flex;
     flex-grow: 1;
-    padding-top: 8px;
-    padding-left: 156px;
+    padding: 40px 0 0;
+    padding-left: 153px;
+    aside {
+      flex-shrink: 0;
+      width: 150px;
+      padding: 0 16px 16px 16px;
+      position: fixed;
+      left: v-bind(leftStyle);
+      background: #fff;
+      height: 100%;
+      border-right: 1px solid #f0f0f0;
+      transition: all 1s linear;
+      h2 {
+        margin-bottom: 4px;
+      }
+      ol {
+        li {
+          font-size: 15px;
+          color: #00000073;
+          height: 40px;
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          padding-left: 4px;
+          &:hover{
+            color: #1890ff;
+          }
+        }
+      }
+    }
+    main {
+      flex-grow: 1;
+      padding: 20px 170px 32px 64px;
+    }
     @media (max-width: 500px) {
       padding-left: 0; 
     }
   }
 }
-.content {
-  display: flex;
-  > aside {
-    flex-shrink: 0;
-  }
-  > main {
-    flex-grow: 1;
-    padding: 16px;
-    background: lightgreen;
-  }
-}
 
 aside {
-  background: lightblue;
-  width: 150px;
-  padding: 16px;
-  position: fixed;
-  top: 0;
-  left: v-bind(leftStyle);
-  top: 60px;
-  height: 100%;
-  transition: all 1s linear;
-  > h2 {
-    margin-bottom: 4px;
-  }
-  > ol {
-    > li {
-      padding: 4px 0;
-    }
-  }
+  
 }
 main {
   overflow: auto;

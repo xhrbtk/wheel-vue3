@@ -1,6 +1,6 @@
 <template>
     <div class="topnav">
-        <div class="logo">LOGO</div>
+        <div class="logo">WHEEL UI</div>
         <ul class="menu">
             <li>菜单1</li>
             <li>菜单2</li>
@@ -19,27 +19,32 @@ const toggleMenu = () => {
 </script>
 <style lang="scss" scoped>
 .topnav { 
-    background: pink;
+    background: #fff;
     display: flex;
     padding: 16px;
     position: relative;
     z-index: 10;
     justify-content: center;
     align-items: center;
-    >.logo{
+    box-shadow: 0 2px 8px #f0f1f2;
+    .logo{
         max-width: 6em;
         margin-right: auto;
         cursor: pointer;
+        color: #1890ff;
+        font-weight: 500;
     }
-    >.menu{
+    .menu{
         display: flex;
         white-space: nowrap;
         flex-wrap: nowrap;
-        >li{
+        li{
             margin: 0 1em;
+            color: #1890ff;
+            cursor: pointer;
         }
     }
-    >.toggleAside{
+    .toggleAside{
         display: inline-block;
         width: 24px;
         height: 24px;
@@ -52,13 +57,13 @@ const toggleMenu = () => {
         cursor: pointer;
     }
     @media (max-width: 500px) {
-        >.menu{
+        .menu{
             display: none;
         }
-        >.logo{
+        .logo{
             margin: 0 auto;
         }
-        >.toggleAside{
+        .toggleAside{
             display: inline-block;
         }
     }
