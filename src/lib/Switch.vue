@@ -1,5 +1,5 @@
 <template>
-    <button :class="{ checked: value }" @click="toggle">
+    <button class="wheel-switch" :class="{ 'wheel-checked': value }" @click="toggle">
         <span></span>
     </button>
 </template>
@@ -17,7 +17,7 @@ const toggle = () => {
 <style lang="scss" scoped>
 $h: 22px;
 $h2: $h - 4px;
-button{
+.wheel-switch{
     height: $h;
     width: $h * 2;
     border: none;
@@ -28,7 +28,7 @@ button{
     &:focus{
         outline: none;
     }
-    &.checked{
+    &.wheel-checked{
         background: #1890ff;
         span{
             left: calc(100% - #{$h2} - 2px)
