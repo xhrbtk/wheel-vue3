@@ -19,3 +19,10 @@
 ## switch 组件 当value为字符串”true“或布尔值true时 显示为开 其他情况显示为关
 
 ## vue3 的v-model
+
+## 传给组件的事件  默认传给组件的最外层元素 button组件
+- 默认所有属性都绑定到根元素
+- 使用inheritAttrs:false 可以取消默认绑定
+- 使用$attrs或者context.attrs获取所有属性
+- 使用v-bind="$attrs"批量绑定属性
+- 使用const{size, ...rest} = context.attrs 将属性分开
