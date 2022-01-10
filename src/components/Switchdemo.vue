@@ -1,13 +1,13 @@
 <template>
     <div>
-        <Switch v-model:value="y" />
+        <Switch v-model:value="bool" />
     </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 import Switch from '../lib/Switch.vue'
-const y = ref(false)
+const bool = ref(false)
 
 </script>
 

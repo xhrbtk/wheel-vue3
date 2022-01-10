@@ -17,3 +17,5 @@
 ## 自动引入功能  安装auto import 插件
 
 ## switch 组件 当value为字符串”true“或布尔值true时 显示为开 其他情况显示为关
+
+## vue3 的v-model
