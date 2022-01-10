@@ -26,3 +26,11 @@
 - 使用$attrs或者context.attrs获取所有属性
 - 使用v-bind="$attrs"批量绑定属性
 - 使用const{size, ...rest} = context.attrs 将属性分开
+## 不能使用scoped
+- 因为data-v-xxx中的xxx每次运行可能不同
+- 必须输出稳定不变的class 选择器 方便使用者覆盖
+- 必须家前缀
+- .button 不行 很容易被使用者覆盖
+- .wheel-button 可以 不太容易被覆盖
+- .theme-link 不行 很容易被使用者覆盖
+- .wheel-theme-link 可以 不太容易被覆盖
