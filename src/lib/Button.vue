@@ -1,17 +1,32 @@
 <template>
-    <button class="wheel-button" :class="`theme-${theme}`">
+    <button class="wheel-button" :class="classes">
         <slot />
     </button>
 </template>
 
 <script lang="ts">
-import { ref } from "vue"
+import { ref, computed } from "vue"
 export default{
    props: {
        theme: {
            type: String,
            default: 'button'
+       },
+       size: {
+           type: String,
+           default: "normal"
        }
+   },
+   setup(props){
+       const { theme, size } = props
+       console.log(theme, size)
+       const classes = computed(() => {
+           return { 
+               [`wheel-theme-${theme}`]: theme, 
+               [`wheel-size-${size}`]: size
+            }
+       })
+       return { classes }
    }
 }
 </script>
@@ -49,6 +64,34 @@ $radius: 4px;
   }
   &::-moz-focus-inner {
     border: 0;
+  }
+  &.wheel-theme-link{
+      border-color: transparent;
+      box-shadow: none;
+      color: $blue;
+      &:hover,&:focus{
+          color: lighten($blue, 10%);
+      }
+  }
+  &.wheel-theme-text{
+      border-color: transparent;
+      box-shadow: none;
+      color: inherit;
+      &:hover, &:focus{
+          background: darken(white, 5%);
+      }
+  }
+  &.wheel-theme-button{
+      &.wheel-size-big{
+        font-size: 24px;
+        height: 48px;
+        padding: 0 16px
+      }
+      &.wheel-size-small{
+        font-size: 12px;
+        height: 20px;
+        padding: 0 4px;
+      }
   }
 }
 </style>
