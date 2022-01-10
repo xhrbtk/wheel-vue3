@@ -1,14 +1,17 @@
 <template>
-    <button :class="{ checked: checked }" @click="toggle">
+    <button :class="{ checked: value }" @click="toggle">
         <span></span>
     </button>
+    <div>{{ value }}</div>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
-
-const checked = ref(true)
+import { ref, defineProps, defineEmits } from 'vue'
+const props = defineProps({
+  value: Boolean
+})
+const emit = defineEmits(['input'])
 const toggle = () => {
-    checked.value = !checked.value
+    emit('input', !props.value)
 }
 
 </script>
@@ -23,6 +26,9 @@ button{
     border-radius: calc($h / 2);
     position: relative;
     cursor: pointer;
+    &:focus{
+        outline: none;
+    }
     &.checked{
         background: #1890ff;
         span{
