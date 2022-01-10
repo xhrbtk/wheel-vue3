@@ -1,3 +1,11 @@
 <template>
-    <div>switchdemo 文档</div>
+    <div>
+        <Switch />
+    </div>
 </template>
+
+<script lang="ts" setup>
+import Switch from '../lib/Switch.vue'
+
+</script>
+
