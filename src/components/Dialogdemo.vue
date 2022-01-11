@@ -5,9 +5,14 @@
     v-model:visible="visible"  
     :closeOnClickOverlay="false"  
     :cancel="cancel"
-    :title="title"
     >
-        今天是个好日子。。。。
+    <template v-slot:title>
+        title
+    </template>
+    <template v-slot:content>
+        <strong>hi</strong>
+        <div>h2</div>
+    </template>
     </Dialog>
 </template>
 
