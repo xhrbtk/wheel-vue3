@@ -1,5 +1,5 @@
 <template>
-<div>
-    tab
-</div>
+    <div>
+        <slot />
+    </div>
 </template>
