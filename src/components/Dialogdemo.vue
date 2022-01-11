@@ -14,11 +14,15 @@
         <div>h2</div>
     </template>
     </Dialog>
+
+    <h2>示例2</h2>
+    <Button @click="showDialog">显示dialog</Button>
 </template>
 
 <script lang="ts" setup>
 import Dialog from '../lib/Dialog.vue'
 import Button from '../lib/Button.vue'
+import { openDialog } from '../lib/openDialog.ts'
 import { ref } from 'vue';
 const visible = ref(false)
 const toggle = () => {
@@ -30,5 +34,17 @@ const ok = () => {
 }
 const cancel = () => {
     console.log('cancel')
+}
+const showDialog = () => {
+    openDialog({
+        title: '标题',
+        content: '内容',
+        ok: () => {
+            console.log('ok')
+        },
+        cancel: () => {
+            console.log('cancel')
+        }
+    })
 }
 </script>
