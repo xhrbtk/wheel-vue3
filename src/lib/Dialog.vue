@@ -1,21 +1,24 @@
 <template>
     <template v-if="visible">
-        <div class="wheel-dialog-overlay" @click="onClickOverlay"></div>
-        <div class="wheel-dialog-wrapper">
-            <div class="wheel-dialog">
-                <header>
-                    <slot name="title" />
-                    <span class="wheel-dialog-close" @click="close"></span>
-                </header>
-                <main>
-                    <slot name="content" />
-                </main>
-                <footer>
-                    <Button level="main" @click="cancel">cancel</Button>
-                    <Button @click="ok">ok</Button>
-                </footer>
+    <!-- teleport  to=body 将组件内的内容都放到body下面 -->
+        <Teleport to="body">
+            <div class="wheel-dialog-overlay" @click="onClickOverlay"></div>
+            <div class="wheel-dialog-wrapper">
+                <div class="wheel-dialog">
+                    <header>
+                        <slot name="title" />
+                        <span class="wheel-dialog-close" @click="close"></span>
+                    </header>
+                    <main>
+                        <slot name="content" />
+                    </main>
+                    <footer>
+                        <Button level="main" @click="cancel">cancel</Button>
+                        <Button @click="ok">ok</Button>
+                    </footer>
+                </div>
             </div>
-        </div>
+        </Teleport>
     </template>
 </template>
 
