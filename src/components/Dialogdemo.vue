@@ -1,7 +1,14 @@
 <template>
     <h1>示例1</h1>
     <Button @click="toggle">toggle</Button>
-    <Dialog v-model:visible="visible" :closeOnClickOverlay="false"  :cancel="cancel"></Dialog>
+    <Dialog 
+    v-model:visible="visible"  
+    :closeOnClickOverlay="false"  
+    :cancel="cancel"
+    :title="title"
+    >
+        今天是个好日子。。。。
+    </Dialog>
 </template>
 
 <script lang="ts" setup>
