@@ -31,15 +31,15 @@ export default{
         const selectedItem = ref<HTMLDivElement>(null)
         const indicator = ref<HTMLDivElement>(null)
         const container = ref<HTMLDivElement>(null)
-        watchEffect(() => {
+        onMounted(() => {
+            watchEffect(() => {
             // watchEffect 在onMounted 之前就会执行 为避免错误 加if 判断
-            if(selectedItem.value && indicator.value && container.value){
                 const { width, left:left1 } = selectedItem.value.getBoundingClientRect()
                 indicator.value.style.width = width + 'px'
                 const { left:left2 } = container.value.getBoundingClientRect()
                 const left = left1 - left2
                 indicator.value.style.left = left + 'px'
-            }
+            })
         })
         const defaults = context.slots.default()
         defaults.forEach(tag => {
