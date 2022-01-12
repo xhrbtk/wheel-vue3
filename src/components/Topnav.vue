@@ -1,17 +1,16 @@
 <template>
     <div class="topnav">
         <div class="logo">
-            <svg class="icon icon-logo" aria-hidden="true" @click="toHome">
-                <use xlink:href="#icon-longmao-"></use>
+            <svg class="icon icon-logo"  @click="toHome">
+                <use xlink:href="#icon-lunzi"></use>
             </svg>
             <span>WHEEL UI</span>
         </div>
         <ul class="menu">
-            <li>菜单1</li>
-            <li>菜单2</li>
+            <router-link to="/doc">文档</router-link>
         </ul>
-        <svg class="icon toggleAside" aria-hidden="true" @click="toggleMenu">
-            <use xlink:href="#icon-yangshi_icon_tongyong_nav_drawer"></use>
+        <svg class="icon toggleAside"  @click="toggleMenu">
+            <use xlink:href="#icon-menu"></use>
         </svg>
     </div>
 </template>
@@ -29,20 +28,20 @@ const toHome = () => {
 
 </script>
 <style lang="scss" scoped>
+$color: #007974;
 .topnav { 
-    background: #fff;
+    color: $color;
     display: flex;
     padding: 16px;
     position: relative;
     z-index: 10;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 8px #f0f1f2;
+    // box-shadow: 0 2px 8px #f0f1f2;
     .logo{
         max-width: 30em;
         margin-right: auto;
         cursor: pointer;
-        color: #1890ff;
         font-weight: 500;
         display: flex;
         align-items: center;
@@ -58,7 +57,6 @@ const toHome = () => {
         flex-wrap: nowrap;
         li{
             margin: 0 1em;
-            color: #1890ff;
             cursor: pointer;
         }
     }

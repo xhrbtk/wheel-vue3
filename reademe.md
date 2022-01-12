@@ -39,3 +39,5 @@
 
 ## 所有写的.vue文件最终都会变成一个type  context.slots.default()[0] === Tab 用来判断传进去的子组件是否是Tab组件
 ## 如何在运行时 确认子组件的类型  通过检查context.slots.default()数组
+
+## 添加圆弧clip-path

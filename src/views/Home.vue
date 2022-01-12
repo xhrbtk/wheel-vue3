@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="topnavAndBanner">
         <Topnav></Topnav>
         <div class="banner">
             <h1 class="title1">WHEEL-UI</h1>
@@ -10,6 +10,31 @@
                 
             </p>
         </div>
+    </div>
+    <div class="features">
+        <ul>
+          <li>
+              <svg class="icon" >
+                <use xlink:href="#icon-vue"></use>
+              </svg>
+              <h3>基于 Vue 3</h3>
+              <p>骄傲地使用了 Vue 3 Composition API</p>
+          </li>
+          <li>
+              <svg class="icon" >
+                <use xlink:href="#icon-ts"></use>
+              </svg>
+              <h3>基于 Typescript</h3>
+              <p>源代码采用 Typescript 书写(非严格检查)</p>
+          </li>
+          <li>
+              <svg class="icon" >
+                <use xlink:href="#icon-d"></use>
+              </svg>
+              <h3>代码易读</h3>
+              <p>每个组件的源代码都极其简洁</p>
+          </li>
+        </ul>
     </div>
 </template>
 <script lang="ts">
@@ -22,33 +47,71 @@ export default {
 
 </script>
 <style lang="scss" scoped>
-.banner {
-  padding: 100px 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background: #fff;
-  height: 100vh;
-  .title1{
-    margin-top: 80px;
-  }
-  .title1, .title2{
-    color: #1890ff;
-  }
-  .actions{
-    padding: 10px 0;
-    a {
-      margin:0 8px;
-      background: #fff;
-      display: inline-block;
-      $h: 40px;
-      height: $h;
-      line-height: $h;
-      border-radius: calc($h / 2);
-      padding: 0 40px;
-      color: rgb(17,148,246);
-      border: 1px solid rgb(17,148,246);
+$green: #02bcb0;
+$border-radius: 4px;
+$color: #007974;
+.topnavAndBanner {
+  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+  clip-path: ellipse(80% 60% at 50% 40%);
+  .banner {
+    color: $color;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .title1{
+      margin-top: 80px;
+    }
+    .actions{
+      padding: 10px 0;
+      a {
+        margin: 0 8px;
+        background: $green;
+        color: #fff;
+        display: inline-block;
+        padding: 8px 24px;
+        border-radius: $border-radius;
+      }
     }
   }
 }
+.features{
+  margin: 64px auto;
+  width: 400px;
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+  @media (min-width: 1200px) {
+    width: 1200px;
+  }
+  >ul {
+    display: flex;
+    flex-wrap: wrap;
+    >li {
+      width: 400px;
+      margin: 16px 0;
+      display: grid;
+      justify-content: start;
+      align-content: space-between;
+      grid-template-areas:
+        "icon title"
+        "icon text";
+      grid-template-columns: 80px auto;
+      grid-template-rows: 1fr auto;
+      >svg {
+        grid-area: icon;
+        width: 64px;
+        height: 64px;
+      }
+      >h3 {
+        grid-area: title;
+        font-size: 28px;
+      }
+      >p {
+        grid-area: text
+      }
+    }
+  }
+}
+
 </style>
