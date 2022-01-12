@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="layout">
-            <Topnav class="nav"></Topnav>
+            <Topnav class="nav" toggleMenuButtonVisible></Topnav>
             <div class="content" >
                 <aside >
                     <ol>
@@ -69,7 +69,7 @@ const leftStyle = computed(() => {
       background: #fff;
       height: 100%;
       border-right: 1px solid #f0f0f0;
-      transition: all 1s linear;
+      transition: all 250ms linear;
       h2 {
         margin-bottom: 4px;
       }

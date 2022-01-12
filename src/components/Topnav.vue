@@ -9,7 +9,7 @@
         <ul class="menu">
             <router-link to="/doc">文档</router-link>
         </ul>
-        <svg class="icon toggleAside"  @click="toggleMenu">
+        <svg class="icon toggleAside" v-if="toggleMenuButtonVisible" @click="toggleMenu">
             <use xlink:href="#icon-menu"></use>
         </svg>
     </div>
@@ -17,9 +17,16 @@
 <script lang="ts" setup>
 import { inject, Ref } from 'vue'
 import { useRouter } from 'vue-router'
+const props = defineProps({
+  toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false
+  }
+})
 const router = useRouter()
 const menuVisible = inject<Ref<boolean>>('menuVisible') //get
 const toggleMenu = () => {
+    console.log('lallalallal')
     menuVisible.value = !menuVisible.value
 }
 const toHome = () => {
@@ -37,7 +44,6 @@ $color: #007974;
     z-index: 10;
     justify-content: center;
     align-items: center;
-    // box-shadow: 0 2px 8px #f0f1f2;
     .logo{
         max-width: 30em;
         margin-right: auto;
