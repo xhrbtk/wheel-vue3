@@ -4,8 +4,20 @@
             <Topnav class="nav" toggleMenuButtonVisible></Topnav>
             <div class="content" >
                 <aside >
+                    <h2>文档</h2>
                     <ol>
-                       <li>组件列表</li>
+                      <li>
+                        <router-link to="/doc/intro">介绍</router-link>
+                      </li>
+                      <li>
+                        <router-link to="/doc/install">安装</router-link>
+                      </li>
+                      <li>
+                        <router-link to="/doc/get-started">开始使用</router-link>
+                      </li>
+                    </ol>
+                    <h2>组件列表</h2>
+                    <ol>
                         <li>
                             <router-link to="/doc/switch">Switch 组件</router-link>
                         </li>
@@ -48,6 +60,7 @@ const leftStyle = computed(() => {
 </script>
 
 <style lang="scss" scoped>
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -63,7 +76,6 @@ const leftStyle = computed(() => {
     aside {
       flex-shrink: 0;
       width: 150px;
-      padding: 0 16px 16px 16px;
       position: fixed;
       left: v-bind(leftStyle);
       background: #fff;
@@ -75,16 +87,22 @@ const leftStyle = computed(() => {
       }
       ol {
         li {
-          font-size: 15px;
-          color: #00000073;
-          height: 40px;
-          margin-top: 20px;
-          display: flex;
-          align-items: center;
-          padding-left: 4px;
-          &:hover{
-            color: #1890ff;
+          >a{
+            display: block;
+            padding: 4px 32px;
+            font-size: 15px;
+            color: #00000073;
+            margin-top: 20px;
+            &:hover{
+              color: #1890ff;
+            }
+            &.router-link-active{
+              background: #e6f7ff;
+              color: #1890ff;
+              text-decoration: underline;
+            }
           }
+          
         }
       }
     }
