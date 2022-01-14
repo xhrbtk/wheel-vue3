@@ -41,3 +41,19 @@
 ## 如何在运行时 确认子组件的类型  通过检查context.slots.default()数组
 
 ## 添加圆弧clip-path
+
+## yarn build 之后 不加载md文件   这是因为 rollup不支持 import 时拼接字符串 要么让它支持 要么不要拼字符串
+
+## 发布官网步骤
+- 如果有dist 目录 则删除dist 目录
+- 在.gitignore添加一行/dist/ 然后提交代码
+- 运行yarn build 创建出最新的dist
+- 运行hs dist 在本地测试网站是否成功运行
+## 部署到github
+- 运行 cd dist 
+- 运行 git init git add git commit -m 'init'
+- 注意现在dist 是一个套娃的git 仓库
+- 新建远程仓库 wheel-website并关联到dist 目录
+- 注意不是关联到wheel-ui-1目录
+- 开启wheel-website 的pages 功能
+
