@@ -54,6 +54,6 @@
 - 运行 git init git add git commit -m 'init'
 - 注意现在dist 是一个套娃的git 仓库
 - 新建远程仓库 wheel-website并关联到dist 目录
-- 注意不是关联到wheel-ui-1目录
+- 注意不是关联到wheel-vue3-1目录
 - 开启wheel-website 的pages 功能
 

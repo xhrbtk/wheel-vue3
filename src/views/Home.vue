@@ -2,7 +2,7 @@
     <div class="topnavAndBanner">
         <Topnav></Topnav>
         <div class="banner">
-            <h1 class="title1">WHEEL-UI</h1>
+            <h1 class="title1">WHEEL-VUE3</h1>
             <h2 class="title2">一个有意思的UI框架</h2>
             <p class="actions">
                 <a href="https://github.com/xhrbtk/wheel-vue3">GITHUB</a>
