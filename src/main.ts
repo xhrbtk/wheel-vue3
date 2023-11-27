@@ -1,16 +1,13 @@
-
-import "./lib/wheel.scss"
-import './index.scss'
+import "./lib/wheel.scss";
+import "./index.scss";
+import { createApp } from "vue";
+import App from "./App.vue";
+import { router } from "./router";
+import './assets/svg.js'
 import 'github-markdown-css'
-import { createApp } from 'vue'
-import App from './App.vue'
-import Markdown from './components/Markdown.vue'
-import router from './router'
+import Markdown from './components/Markdown.vue';
 
-import "./lib/iconfont.js"
-
-
-const app = createApp(App)
-app.use(router)
-app.mount('#app')
+const app = createApp(App);
+app.use(router);
+app.mount("#app");
 app.component("Markdown", Markdown)
