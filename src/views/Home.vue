@@ -36,6 +36,7 @@
           </li>
         </ul>
     </div>
+
 </template>
 <script lang="ts">
 import Topnav from '../components/Topnav.vue'
@@ -113,5 +114,7 @@ $color: #007974;
     }
   }
 }
+
+
 
 </style>

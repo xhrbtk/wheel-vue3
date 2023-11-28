@@ -71,8 +71,7 @@ const leftStyle = computed(() => {
   .content {
     display: flex;
     flex-grow: 1;
-    padding: 40px 0 0;
-    padding-left: 153px;
+    padding: 100px 16px 0 160px;
     aside {
       flex-shrink: 0;
       width: 150px;
@@ -80,16 +79,18 @@ const leftStyle = computed(() => {
       left: v-bind(leftStyle);
       background: #fff;
       height: 100%;
-      border-right: 1px solid #f0f0f0;
       transition: all 250ms linear;
+      top: 100px;
+      padding-left: 16px;
       h2 {
         margin-bottom: 4px;
+        font-size: 16px;;
       }
       ol {
         li {
           >a{
             display: block;
-            padding: 4px 32px;
+            padding: 4px 26px;
             font-size: 15px;
             color: #00000073;
             margin-top: 20px;
@@ -108,8 +109,8 @@ const leftStyle = computed(() => {
     }
     main {
       flex-grow: 1;
-      padding: 20px 170px 32px 64px;
       overflow: auto;
+      padding-left: 10px;
     }
     @media (max-width: 500px) {
       padding-left: 0; 

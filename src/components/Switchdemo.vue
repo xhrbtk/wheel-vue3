@@ -34,7 +34,7 @@ $border-color: #d9d9d9;
   margin: 16px 0 32px;
 
   >h2 {
-    font-size: 20px;
+    font-size: 16px;
     padding: 8px 16px;
     border-bottom: 1px solid $border-color;
   }

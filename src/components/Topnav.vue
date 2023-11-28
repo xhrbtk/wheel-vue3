@@ -44,6 +44,10 @@ $color: #007974;
     z-index: 10;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    height: 60px;
     .logo{
         max-width: 30em;
         margin-right: auto;
